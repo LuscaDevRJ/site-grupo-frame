@@ -1,0 +1,1951 @@
+/* Reset básico para tirar margens padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif; /* Substitua pela fonte exata do projeto depois */
+}
+
+/* --- Cabeçalho --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo img {
+    height: 105px; /* Ajuste conforme o tamanho da logo */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #00c853; /* O verde da Frame */
+}
+
+/* --- Seção Principal (Hero) --- */
+.hero {
+    position: relative;
+    height: 80vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.carousel-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Fica atrás de tudo */
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Efeito de transição de esmaecimento (Fade) */
+    opacity: 0;
+    transition: opacity 1s ease-in-out; 
+    z-index: 1;
+}
+
+/* Classe que o JavaScript vai adicionar para mostrar o slide atual */
+.slide.active {
+    opacity: 1;
+    z-index: 2; /* Fica por cima dos outros slides */
+}
+
+/* Camada escura e Botão fixo continuam parecidos */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3; /* Acima dos slides */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    color: #ffffff;
+    margin-top: 0;
+    padding-top: 600px;
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active, .dot:hover {
+    background-color: #00c853; /* Verde Frame */
+}
+
+.hero-icon {
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.hero-content h1 {
+    font-family: Arial, sans-serif;
+    font-size: 48px;
+    font-weight: 900;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.hero-content p {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+.btn-green {
+    display: inline-block;
+    background-color: #008136;
+    color: #ffffff;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-green:hover {
+    background-color: #009624;
+}
+
+/* --- Botões Flutuantes --- */
+.floating-buttons {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 100;
+}
+
+.btn-totop, .btn-whatsapp img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.btn-totop {
+    background-color: #333;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.btn-whatsapp img {
+    background-color: #25D366; /* Verde oficial do WhatsApp */
+}
+
+/* --- Seção Diferenciais --- */
+.diferenciais {
+    padding: 80px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+/* Criamos um container para o conteúdo não esticar até as bordas em telas muito grandes */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.diferenciais-header {
+    margin-bottom: 60px;
+}
+
+.diferenciais-header h2 {
+    font-size: 32px;
+    font-weight: 900;
+    color: #1a1a1a; /* Um cinza quase preto, mais suave que o #000 */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.diferenciais-header p {
+    font-size: 20px;
+    color: #444;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Usando Grid para fazer as 4 colunas perfeitas */
+.diferenciais-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.diferencial-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.diferencial-card img {
+    height: 55px; /* Ajuste de acordo com o tamanho real dos ícones que você baixou */
+    margin-bottom: 20px;
+}
+
+.diferencial-card h3 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+}
+
+.diferencial-card p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* Estilo extra para o botão Saiba Mais ficar mais largo, como no print */
+.btn-large {
+    padding: 15px 100px; /* Aumenta o preenchimento lateral */
+    border-radius: 8px; /* Deixa as bordas um pouco mais arredondadas */
+}
+
+/* ==========================================
+   SEÇÃO PORTFÓLIO (Carrossel Infinito CSS)
+   ========================================== */
+.portfolio {
+    background-color: #041221;
+    color: #ffffff;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.portfolio-header { margin-bottom: 50px; }
+.portfolio-header h2 { font-size: 32px; font-weight: 900; margin-bottom: 20px; }
+.portfolio-header p { font-size: 16px; max-width: 900px; margin: 0 auto; line-height: 1.6; }
+
+/* --- O SEU CÓDIGO AQUI --- */
+.portfolio-carousel-wrapper {
+    margin: 50px auto; /* Reduzi um pouco para não ficar tão longe do texto */
+    width: 90%;
+    display: flex;
+    overflow: auto;
+}
+
+.portfolio-carousel-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.portfolio-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    animation: spin 75s infinite linear; /* Mudei de 5s para 15s pra ficar mais suave, você ajusta! */
+    padding-right: 1em;
+    width: max-content; /* Garante que a esteira estique o suficiente para todas as fotos */
+}
+
+@keyframes spin {
+    from { transform: translateX(0); } /* Usando transform por segurança em navegadores antigos */
+    to { transform: translateX(-100%); }
+}
+
+/* --- CONTROLE DO TAMANHO DAS FOTOS --- */
+.foto-port {
+    width: 350px;  /* Você ajusta a largura que quiser aqui */
+    height: 350px; /* Você ajusta a altura que quiser aqui */
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Botão Ver Mais */
+.portfolio-footer { text-align: center; margin-top: 40px; }
+.btn-ver-mais { padding: 15px 80px; border-radius: 8px; }
+
+/* --- Seção Blog --- */
+.blog-section {
+    background-color: #fdfdfd;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    font-weight: 900;
+    color: #041221;
+    margin-bottom: 50px;
+}
+
+/* O "Grid" que organiza os cards */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto 50px auto;
+}
+
+/* Card Destaque (Tudo clicável com imagem de fundo) */
+.blog-card-featured {
+    grid-column: span 3; /* Ocupa as 3 colunas no grid */
+    height: 400px; 
+    padding: 0; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; 
+    border-radius: 12px;
+    text-decoration: none; 
+    overflow: hidden;
+}
+
+/* Imagem jogada para o fundo do destaque */
+.blog-card-featured img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; 
+    z-index: 0;
+}
+
+/* A Película escura do destaque */
+.blog-card-featured .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(4, 18, 33, 0.4); 
+    z-index: 1;
+    transition: background-color 0.4s ease; 
+}
+
+.blog-card-featured:hover .overlay {
+    background-color: rgba(4, 18, 33, 0.8); 
+}
+
+/* O texto e o botão do destaque */
+.blog-card-featured .blog-card-content {
+    position: relative;
+    z-index: 2; 
+    text-align: center;
+    max-width: 950px;
+    padding: 20px;
+}
+
+.blog-card-featured h3 {
+    font-size: 30px;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.blog-card-featured p {
+    font-size: 16px;
+    color: #ddd; 
+    line-height: 1.6;
+    margin-bottom: 30px; 
+}
+
+.blog-card-featured .btn-green {
+    font-size: 16px;
+    padding: 12px 30px;
+}
+
+/* --- Estilo dos 3 Cards Menores --- */
+.blog-card-small {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.blog-card-small:hover {
+    transform: translateY(-5px); /* Dá uma subida de leve ao passar o mouse */
+}
+
+/* A caixa que segura a imagem e o título */
+.blog-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 220px; /* Altura exata da foto */
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 15px; 
+}
+
+.blog-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* O degradê escuro embaixo do título para ele ficar legível */
+.blog-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70%; 
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    z-index: 1;
+}
+
+.blog-img-wrapper h3 {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 800;
+    z-index: 2;
+    margin: 0;
+    line-height: 1.3;
+}
+
+/* O texto que fica fora da imagem */
+.blog-text p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0 5px; 
+}
+
+.load-more-btn-container {
+    margin-top: 50px;
+}
+
+.load-more-btn-container .btn-green {
+    padding: 15px 100px;
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+/* --- Seção Newsletter --- */
+.newsletter-section {
+    background-color: #ffffff; /* Fundo branco limpo, igual à foto */
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.newsletter-header {
+    margin-bottom: 40px; /* Dá o espaço exato entre o texto e o formulário */
+}
+
+.newsletter-header h2 {
+    font-size: 36px; 
+    font-weight: 900;
+    color: #041221; 
+    margin-bottom: 15px;
+    letter-spacing: -0.5px; /* Deixa as letras sutilmente mais juntas como no original */
+}
+
+.newsletter-header p {
+    font-size: 16px;
+    color: #444; /* Cinza escuro */
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.newsletter-form-container form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Espaçamento entre os campos */
+    max-width: 950px; /* Largura total do formulário ajustada */
+    margin: 0 auto;
+}
+
+.newsletter-form-container input {
+    flex-grow: 1; /* Faz os dois inputs esticarem por igual */
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid #777; /* Borda mais definida como na imagem */
+    border-radius: 4px; /* Bordas um pouco mais retas */
+    font-size: 15px;
+    color: #333;
+    outline: none; /* Tira o contorno azul padrão do navegador */
+    transition: border-color 0.3s;
+}
+
+/* Efeito extra: Borda fica verde ao clicar no campo para digitar */
+.newsletter-form-container input:focus {
+    border-color: #00c853; 
+}
+
+.newsletter-form-container .btn-green {
+    padding: 15px 50px;
+    border-radius: 4px; /* Bordas iguais às dos inputs */
+    font-size: 16px;
+    font-weight: bold;
+    flex-shrink: 0; /* Garante que o botão não seja esmagado pelos inputs */
+    border: none; 
+    cursor: pointer;
+}
+
+/* --- Rodapé (Footer) --- */
+.site-footer {
+    background-color: #00c853; /* O verde oficial da Frame */
+    color: #ffffff;
+    padding: 60px 20px 20px 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-col {
+    flex: 1; /* Faz as 3 colunas terem larguras iguais */
+    padding: 0 40px; /* Dá um respiro para o texto não colar nas linhas divisórias */
+}
+
+/* Criando as linhas verticais na Coluna 1 e na Coluna 2 */
+.footer-col:nth-child(1),
+.footer-col:nth-child(2) {
+    border-right: 1px solid rgba(255, 255, 255, 0.4); /* Linha branca levemente transparente */
+}
+
+/* Tira o padding da esquerda da primeira coluna e da direita da última para o texto ficar bem alinhado com o site */
+.footer-col:first-child {
+    padding-left: 0;
+}
+.footer-col:last-child {
+    padding-right: 0;
+}
+
+.footer-col h4 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer-col p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* Estilo da lista de Páginas */
+.footer-col ul {
+    list-style: none; /* Tira as bolinhas da lista */
+}
+
+.footer-col ul li {
+    margin-bottom: 8px;
+}
+
+.footer-col ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: opacity 0.3s;
+}
+
+.footer-col ul li a:hover {
+    opacity: 0.7; /* Dá uma leve apagadinha ao passar o mouse */
+    text-decoration: underline;
+}
+
+/* Estilo dos ícones das redes sociais */
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons img {
+    width: 40px; /* Tamanho dos ícones */
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.1); /* Faz o ícone dar uma "crescidinha" ao passar o mouse */
+}
+
+/* Rodapé inferior (Direitos Autorais) */
+.footer-bottom {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 60px; /* Empurra os direitos lá para baixo */
+}
+
+
+/* ==========================================
+   ESTILOS ESPECÍFICOS DA PÁGINA 2 (A Frame)
+   ========================================== */
+
+/* --- Banner Estático (Sem slide) --- */
+.page-banner {
+    position: relative;
+    height: 50vh; /* Altura menor que o hero da P1, igual no print */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* AQUI: Efeito Parallax, o fundo fica travado enquanto o site rola */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* Camada escura para o título branco ficar legível (ajuste a opacidade se necessário) */
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(4, 18, 33, 0.5); /* Escurece em 50% */
+    z-index: 1;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 2; /* Fica acima da camada escura */
+}
+
+/* Estilo do título "A FRAME" centralizado no banner */
+.banner-content h1 {
+    font-size: 80px; /* Bem grande, conforme o print */
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px; /* Espaçamento entre as letras elegante */
+}
+
+/* --- Seção de Conteúdo de Texto --- */
+.page-content {
+    background-color: #ffffff;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+/* Container específico para centralizar e formatar o parágrafo longo */
+.container-text-central {
+    max-width: 800px; /* Largura ideal para leitura de textos longos */
+    margin: 0 auto;
+}
+
+.container-text-central p {
+    font-size: 20px;
+    color: #000000; /* Cinza escuro suave */
+    line-height: 1.8; /* Espaçamento entre as linhas maior para facilitar a leitura */
+    margin-bottom: 20px;
+}
+
+/* ==========================================
+   SEÇÃO MISSÃO, VISÃO E VALORES (Página 2)
+   ========================================== */
+.mvv-section {
+    background-color: #ffffff;
+    padding: 20px 20px 80px 20px;
+}
+
+/* Limitamos a largura para o texto não esticar na tela toda, igual no print */
+.mvv-container {
+    max-width: 900px; 
+    margin: 0 auto;
+}
+
+/* O Flexbox que coloca o ícone do lado do texto */
+.mvv-row {
+    display: flex;
+    align-items: center;
+    gap: 50px; /* Espaço entre o ícone e o texto */
+    padding: 50px 0; /* Espaço em cima e embaixo de cada bloco */
+}
+
+/* Impede o ícone de ser esmagado pelo texto */
+.mvv-icon {
+    flex-shrink: 0; 
+}
+
+.mvv-icon img {
+    width: 80px; /* Tamanho do ícone verde */
+    height: auto;
+}
+
+/* O texto ocupa o resto do espaço */
+.mvv-text {
+    flex-grow: 1;
+}
+
+.mvv-text h2 {
+    font-size: 28px;
+    font-weight: 900;
+    color: #041221;
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
+}
+
+.mvv-text p {
+    font-size: 20px;
+    color: #000000;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.mvv-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* Truque para a Visão: Alinhar o texto para a direita */
+.visao-row .mvv-text {
+    text-align: right;
+}
+
+/* A linha verde fininha que separa os blocos */
+.mvv-divider {
+    border: none;
+    height: 1px;
+    background-color: #00c853; /* O verde da Frame */
+    width: 100%;
+    margin: 0;
+}
+
+/* --- Seção Chamada para Ação (CTA - Página 2) --- */
+.cta-section {
+    background-color: #041221; /* O mesmo azul bem escuro do portfólio */
+    color: #ffffff;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.cta-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cta-section h2 {
+    font-size: 32px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+}
+
+.cta-section p {
+    font-size: 20px;
+    color: #ffffff; /* Branco levemente acinzentado para leitura suave */
+    line-height: 1.6;
+    margin-bottom: 40px; /* Dá espaço para o botão respirar */
+}
+
+/* O botão puxa a classe .btn-green que já existe, 
+   então não precisamos reescrever o código dele! */
+
+   /* ==========================================
+   ESTILOS ESPECÍFICOS DA PÁGINA 3 (Diferencial)
+   ========================================== */
+
+/* Filtro meio branco para o banner */
+.banner-overlay-light {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* O código abaixo é a cor Branca (255,255,255) com 30% de opacidade (0.3) */
+    background-color: rgba(255, 255, 255, 0.3); 
+    z-index: 1;
+}
+
+/* Como o fundo ficou mais claro, adicionamos uma sombrinha no texto branco para ele não sumir */
+.texto-com-sombra {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Título escuro abaixo do banner */
+.titulo-destaque-escuro {
+    font-size: 32px;
+    font-weight: 900;
+    color: #041221;
+    line-height: 1.4;
+    margin-bottom: 30px;
+}
+
+/* --- Detalhes do Diferencial (Checkmarks e Pilares) --- */
+.diferencial-detalhes {
+    padding-bottom: 100px; /* Espaço extra no fundo antes do rodapé */
+}
+
+/* A grade dos checks (2 colunas) */
+.diferencial-checks-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-top: 50px;
+    margin-bottom: 80px;
+}
+
+.check-item {
+    display: flex;
+    align-items: flex-start; /* Alinha o check no topo da frase */
+}
+
+/* O símbolo de ✔ verde */
+.check-icon {
+    color: #00c853; /* Verde Frame */
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 15px;
+    line-height: 1; /* Tira os espaços extras em cima do símbolo */
+}
+
+.check-item p {
+    font-size: 18px;
+    color: #000000;
+    line-height: 1.6;
+    margin: 0;
+    text-align: left; /* Garante que o texto fique alinhado à esquerda */
+}
+
+/* A grade dos 4 pilares (4 colunas) */
+.diferencial-pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.pillar-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.pillar-card h3 {
+    font-size: 22px;
+    font-weight: 900;
+    color: #041221;
+    margin-bottom: 20px;
+}
+
+.pillar-card img {
+    height: 50px; /* Tamanho dos ícones verdes */
+    margin-bottom: 20px;
+}
+
+.pillar-card p {
+    font-size: 14px;
+    color: #000000;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   ESTILOS ESPECÍFICOS DA PÁGINA 4 (Portfólio)
+   ========================================== */
+
+.portfolio-intro {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+/* O Grid que divide o conteúdo em 2 colunas */
+.portfolio-intro-grid {
+    display: grid;
+    /* A primeira coluna ocupa 4 partes, a segunda ocupa 6 partes do espaço */
+    grid-template-columns: 4fr 6fr; 
+    gap: 50px;
+    align-items: center; /* Centraliza o texto verticalmente lado a lado */
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.intro-esquerda {
+    text-align: center; /* Deixa o título alinhado ao centro dentro do bloco dele */
+}
+
+.intro-esquerda h2 {
+    font-size: 26px;
+    font-weight: 900;
+    color: #041221;
+    line-height: 1.3;
+}
+
+.intro-direita p {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* A listinha com os itens lado a lado */
+.lista-pontos-verdes {
+    list-style: none; /* Tira as bolinhas pretas padrão */
+    display: flex;
+    flex-wrap: wrap; /* Se não couber na linha, joga pra baixo */
+    gap: 15px;
+    padding: 0;
+}
+
+.lista-pontos-verdes li {
+    font-size: 14px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Criando o pontinho verde via HTML e pintando no CSS */
+.ponto-verde {
+    color: #00c853; /* Verde Frame */
+    font-size: 18px;
+    line-height: 1;
+}
+
+/* ==========================================
+   ESTILOS ESPECÍFICOS DA PÁGINA DE CONTATO
+   ========================================== */
+
+.contact-page-section {
+    padding: 80px 20px;
+    background-color: #ffffff;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* Duas colunas exatamente iguais (50/50) */
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center; /* Alinha o topo do mapa com o topo do formulário */
+}
+
+/* O Mapa */
+.contact-map {
+    width: 100%;
+    height: 100%;
+    min-height: 650px; /* Garante que o mapa não fique achatado */
+    border-radius: 8px; /* Borda levemente arredondada para ficar moderno */
+    overflow: hidden;
+}
+
+/* O Formulário */
+.contact-form-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form-box h2 {
+    font-size: 28px;
+    font-weight: 900;
+    color: #041221;
+    line-height: 1.3;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* A linha que divide o Telefone e o E-mail */
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.form-row input {
+    flex: 1; /* Faz os dois campos dividirem o espaço igualmente */
+}
+
+/* Estilo visual dos campos de digitar */
+.contact-form-box input[type="text"],
+.contact-form-box input[type="tel"],
+.contact-form-box input[type="email"],
+.contact-form-box textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #777; /* Borda escura igual ao print */
+    border-radius: 4px;
+    font-size: 15px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.contact-form-box textarea {
+    resize: vertical; /* Permite que o usuário aumente a caixa só para baixo */
+}
+
+.contact-form-box input:focus,
+.contact-form-box textarea:focus {
+    border-color: #00c853; /* Borda fica verde ao clicar */
+}
+
+/* O Checkbox lá embaixo */
+.form-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.form-checkbox label {
+    font-size: 13px;
+    color: #444;
+}
+
+/* Ajuste do botão Enviar para ele não ocupar a largura toda */
+.btn-enviar {
+    padding: 15px 50px;
+    border: none;
+    cursor: pointer;
+    align-self: flex-start; /* Joga o botão para o canto esquerdo */
+    border-radius: 6px;
+}
+
+/* ==========================================
+   SLIDER DO PORTFÓLIO (Estilo Banner)
+   ========================================== */
+.portfolio-slider-container {
+    position: relative;
+    max-width: 900px; /* Largura máxima da foto */
+    margin: 0 auto;
+    border-radius: 8px; /* Bordinha arredondada elegante */
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Sombra leve em volta da foto */
+}
+
+/* Esconde todos os slides por padrão */
+.portfolio-slide {
+    display: none;
+    width: 100%;
+}
+
+/* Mostra apenas o slide que tem a classe 'active' */
+.portfolio-slide.active {
+    display: block;
+    animation: fadePort 0.8s; /* Animação de transição suave */
+}
+
+.portfolio-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Animação do Fade */
+@keyframes fadePort {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+/* Botões das Setas */
+.seta-port {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 15px 20px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: rgba(4, 18, 33, 0.6); /* Fundo escuro transparente */
+    border: none;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.seta-port.esquerda { left: 10px; }
+.seta-port.direita { right: 10px; }
+
+/* Ao passar o mouse, a seta fica com o Verde Frame */
+.seta-port:hover {
+    background-color: #00c853; 
+}
+
+
+/* ==========================================
+   PORTFÓLIO: GRADE COM FILTROS (Estilo WordPress)
+   ========================================== */
+.portfolio-gallery {
+    padding: 60px 20px;
+    background-color: #fdfdfd; 
+}
+
+/* --- Barra de Filtros --- */
+.portfolio-filters {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.portfolio-filters ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Permite que os filtros quebrem de linha no celular */
+    gap: 25px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.filter-btn {
+    background: none;
+    border: none;
+    color: #444;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    padding-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    color: #00c853; /* O verde do Grupo Frame */
+}
+
+/* A barrinha verde que fica embaixo do filtro ativo */
+.filter-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -12px; /* Alinha perfeitamente com a borda cinza do ul */
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #00c853;
+}
+
+/* --- A Grade de Fotos --- */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas exatas */
+    gap: 20px;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.grid-item {
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.grid-item:hover {
+    transform: translateY(-5px); /* Dá uma leve subida ao passar o mouse */
+}
+
+.grid-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 280px; /* Altura padrão para todas as fotos da grade */
+}
+
+.grid-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Preenche a caixa sem distorcer */
+    display: block;
+}
+
+/* --- Efeito Escuro (Hover) --- */
+.grid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75); /* Escurece 75% */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; 
+    transition: opacity 0.3s ease;
+}
+
+.grid-overlay h3 {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+    margin: 0;
+    transform: translateY(15px); /* Texto começa um pouco para baixo */
+    transition: transform 0.3s ease;
+}
+
+/* O gatilho do Hover */
+.grid-img-wrapper:hover .grid-overlay { opacity: 1; }
+.grid-img-wrapper:hover .grid-overlay h3 { transform: translateY(0); }
+
+/* Classe auxiliar que o JS vai usar para esconder as fotos filtradas */
+.esconder-item {
+    display: none;
+}
+
+/* ==========================================
+   ESTEIRAS INFINITAS (PRODUTOS E CLIENTES)
+   ========================================== */
+.portfolio-produtos, .portfolio-clientes {
+    padding: 60px 0;
+    background-color: #fdfdfd; /* Fundo limpo */
+}
+
+.titulo-secao {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 900;
+    color: #041221;
+    margin-bottom: 40px;
+}
+
+.text-center {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* --- Base da Esteira --- */
+.marquee-wrapper {
+    width: 100%;
+    overflow: hidden; /* Esconde o que sai da tela */
+    display: flex;
+}
+
+.marquee-track {
+    display: flex;
+    gap: 20px;
+    padding-right: 20px; /* Mantém o espaçamento no final */
+    width: max-content; /* Estica o container para caber todas as fotos */
+    animation: rolarEsteira 65s linear infinite; /* 20s é a velocidade, pode aumentar ou diminuir */
+}
+
+/* Esteira rodando para a Esquerda */
+@keyframes rolarEsteira {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 10px)); } /* Anda exatamente metade do caminho e reseta */
+}
+
+/* Esteira rodando para a Direita (Opcional, pro visual ficar mais dinâmico) */
+.track-reverso {
+    animation: rolarEsteiraReversa 65s linear infinite;
+}
+
+@keyframes rolarEsteiraReversa {
+    0% { transform: translateX(calc(-50% - 10px)); }
+    100% { transform: translateX(0); }
+}
+
+/* --- Visual dos Produtos --- */
+.foto-produto {
+    width: 300px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* --- Visual dos Clientes (Caixas Brancas) --- */
+.caixa-logo {
+    width: 250px;
+    height: 200px;
+    background-color: #cccccc;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Sombreado bem de leve */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1px;
+}
+
+.caixa-logo img {
+    max-width: 200%;
+    max-height: 200%;
+    object-fit: contain; /* Garante que a logo do cliente não seja cortada */
+}
+
+
+/* ==========================================
+   LIGHTBOX DO PORTFÓLIO (Efeito Zoom)
+   ========================================== */
+#lightbox {
+    position: fixed;
+    z-index: 9999; /* Fica por cima de TUDO no site */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Fundo quase 100% preto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Começa invisível */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+/* Classe que o JS vai adicionar para mostrar o lightbox */
+#lightbox.ativo {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-conteudo {
+    position: relative;
+    max-width: 90%;
+    max-height: 90vh; /* 90% da altura da tela */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#lightbox-img {
+    max-width: 100%;
+    max-height: 80vh; /* Para a foto não sair da tela */
+    object-fit: contain;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5); /* Sombra elegante */
+}
+
+#lightbox-legenda {
+    color: #ffffff;
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Botões Fechar e Setas */
+.lightbox-fechar {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: #fff;
+    font-size: 45px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;
+    transition: 0.3s;
+}
+
+.lightbox-fechar:hover { color: #00c853; } /* Fica verde ao passar o mouse */
+
+.lightbox-seta {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1); /* Fundo levemente transparente */
+    color: white;
+    border: none;
+    font-size: 30px;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.lightbox-seta:hover { background: #00c853; }
+.lightbox-seta.esquerda { left: 30px; }
+.lightbox-seta.direita { right: 30px; }
+
+/* Adiciona o "dedinho" de clique em todas as fotos da grade */
+.grid-item { cursor: pointer; }
+
+/* ==========================================
+   BANNER DO BLOG (SLIDER COM FADE)
+   ========================================== */
+.blog-hero-slider {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Altura do banner principal */
+    overflow: hidden;
+}
+
+.blog-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: none; /* Esconde todas as fotos por padrão */
+    align-items: center;
+    justify-content: center;
+}
+
+.blog-slide.active {
+    display: flex; /* Mostra apenas a foto com a classe active */
+    animation: fadeBlog 1s; /* Animação suave */
+}
+
+/* Película escura sobre a foto */
+.blog-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65); 
+    z-index: 1;
+}
+
+/* Texto do Banner */
+.blog-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #ffffff;
+}
+
+.blog-hero-content h2 {
+    font-size: 30px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.blog-hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+@keyframes fadeBlog {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+/* Bolinhas de Navegação (Lateral Direita) */
+.blog-slider-dots {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column; /* Coloca uma bolinha embaixo da outra */
+    gap: 12px;
+    z-index: 10;
+}
+
+.blog-slider-dots .dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.blog-slider-dots .dot:hover,
+.blog-slider-dots .dot.active {
+    background-color: #00c853; /* Verde do Grupo Frame */
+    box-shadow: 0 0 8px #00c853; /* Brilho leve */
+}
+
+/* ==========================================
+   BARRA DE PESQUISA DO BLOG
+   ========================================== */
+.blog-search-section {
+    padding: 40px 0 20px 0;
+    background-color: #ffffff;
+}
+
+.blog-search-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Ajuda a não quebrar no celular */
+    gap: 20px;
+}
+
+.titulo-blog {
+    font-size: 28px;
+    font-weight: 900;
+    color: #041221;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+}
+
+.search-box input {
+    padding: 12px 20px;
+    border: 1px solid #00c853; /* Borda verde */
+    border-radius: 4px 0 0 4px; /* Arredonda só do lado esquerdo */
+    outline: none;
+    width: 300px;
+    font-size: 14px;
+}
+
+.search-box button {
+    background-color: #00c853;
+    border: none;
+    padding: 13px 20px;
+    color: white;
+    border-radius: 0 4px 4px 0; /* Arredonda só do lado direito */
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-box button:hover {
+    background-color: #009624;
+}
+
+
+/* ==========================================
+   CARDS E CARROSSÉIS DO BLOG
+   ========================================== */
+.blog-carrossel-secao {
+    padding: 40px 0;
+    background-color: #ffffff;
+}
+
+.titulo-secao-blog {
+    font-size: 26px;
+    font-weight: 900;
+    color: #041221;
+    margin-bottom: 25px;
+}
+
+.blog-carrossel-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden; /* MÁGICA 1: Esconde tudo que sair da caixa central */
+}
+
+/* A Pista do Carrossel */
+.blog-carrossel-track {
+    display: flex;
+    gap: 20px;
+    width: 100%; /* Mantém a largura baseada no container */
+    /* Apagamos o overflow-x e o scroll-behavior daqui! */
+}
+
+/* Esconde a barra de rolagem nativa para ficar mais limpo */
+.blog-carrossel-track::-webkit-scrollbar { display: none; }
+
+/* O Card em si */
+.blog-card {
+    /* A MÁGICA PARA CABER 3: 0 (não cresce), 0 (não encolhe), e a largura exata de 1/3 descontando os 2 espaços de 20px */
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.blog-carrossel-secao .blog-card {
+    flex: 0 0 calc((100% - 40px) / 3);
+    max-width: calc((100% - 40px) / 3); 
+}
+
+/* A caixa da foto */
+.blog-card-imagem {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.blog-card-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* O Degradê e o Título sobre a foto */
+.blog-card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 20px 15px;
+}
+
+.blog-card-overlay h3 {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 800;
+    margin: 0;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.blog-card-texto {
+    height: 65px; /* Aumentamos a caixinha para o texto não ficar espremido */
+    margin-top: 5px;
+}
+/* O texto resumo de fora */
+.blog-card-texto p {
+    font-size: 14px; /* Letra mais confortável para leitura */
+    color: #555555;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Agora ele permite até 3 linhas de resumo antes de botar os "..." */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Setinhas laterais */
+.blog-btn-seta {
+    position: absolute;
+    top: 110px; /* Alinha no meio da foto, não no meio do card inteiro */
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.blog-btn-seta:hover { background-color: #00c853; }
+.blog-btn-seta.esquerda { left: -15px; }
+.blog-btn-seta.direita { right: -15px; }
+
+.blog-carrossel-secao .container {
+    max-width: 1350px; 
+}
+
+/* ==========================================
+   SEÇÃO DE NEWSLETTER (CAPTURA DE LEADS)
+   ========================================== */
+.newsletter-secao {
+    background-color: #f9f9f9; /* Fundo cinza bem claro, igual ao print */
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.newsletter-texto {
+    margin-bottom: 40px;
+}
+
+.newsletter-texto h2 {
+    color: #041221; /* Azul marinho do Grupo Frame */
+    font-size: 32px;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.newsletter-texto p {
+    color: #444;
+    font-size: 16px;
+    margin: 0;
+}
+
+/* O Formulário Horizontal */
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Espaço entre os campos */
+    max-width: 900px; /* Limita a largura para não esticar demais em monitores gigantes */
+    margin: 0 auto;
+}
+
+.newsletter-form input {
+    flex: 1; /* Faz os dois inputs dividirem o espaço meio a meio */
+    padding: 15px 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px; /* Borda levemente arredondada */
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.newsletter-form input:focus {
+    border-color: #00c853; /* Borda fica verde ao clicar e digitar */
+}
+
+.newsletter-form button {
+    background-color: #00c853; /* Verde Frame */
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    white-space: nowrap; /* Impede que o texto "Inscrever-se" quebre em duas linhas */
+}
+
+.newsletter-form button:hover {
+    background-color: #009624; /* Verde mais escuro no hover */
+}
+
+/* --- Ajuste Responsivo para Celulares --- */
+@media (max-width: 768px) {
+    .newsletter-form {
+        flex-direction: column; /* Empilha tudo um embaixo do outro no celular */
+        gap: 15px;
+    }
+    
+    .newsletter-form input,
+    .newsletter-form button {
+        width: 100%; /* Ocupa 100% da tela do celular */
+    }
+}
+
+
+/* ==========================================
+   LAYOUT DO POST (DUAS COLUNAS - IDÊNTICO AO WP)
+   ========================================== */
+
+/* Estrutura Principal da Página */
+.post-layout-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Coluna esquerda (2 partes), Coluna direita (1 parte) */
+    gap: 40px;
+    padding-top: 50px;
+    padding-bottom: 80px;
+}
+
+/* --- COLUNA ESQUERDA (Matéria) --- */
+.post-coluna-principal {
+    padding-right: 40px;
+    border-right: 1px solid #e0e0e0; /* A linha cinza divisória do seu print */
+}
+
+.post-titulo {
+    font-size: 36px;
+    font-weight: 900;
+    color: #041221;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.post-intro {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 25px;
+}
+
+.post-meta {
+    font-size: 14px;
+    color: #666;
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.post-meta span i {
+    margin-right: 5px;
+}
+
+/* Botões de Redes Sociais Retangulares */
+.post-share-botoes {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.btn-share {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 4px; /* Cantinhos levemente arredondados */
+    transition: opacity 0.3s;
+}
+
+.btn-share:hover { opacity: 0.8; }
+.btn-share.fb { background-color: #3b5998; }
+.btn-share.tw { background-color: #1da1f2; }
+.btn-share.wp { background-color: #25d366; }
+.btn-share.in { background-color: #0077b5; }
+
+/* Imagem Destaque Abaixo dos Botões */
+.post-foto-destaque {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+/* Tipografia de Leitura Restante */
+.post-conteudo-leitura h2 {
+    font-size: 26px;
+    font-weight: 800;
+    color: #041221;
+    margin: 40px 0 20px 0;
+}
+
+.post-conteudo-leitura p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+/* --- COLUNA DIREITA (Sidebar Relacionadas) --- */
+.post-sidebar {
+    padding-left: 10px;
+}
+
+.sidebar-titulo {
+    font-size: 22px;
+    font-weight: 900;
+    color: #041221;
+    margin-bottom: 30px;
+}
+
+/* Card lateral em forma de link */
+.sidebar-card {
+    display: block;
+    text-decoration: none;
+    margin-bottom: 35px;
+    transition: transform 0.3s;
+}
+
+.sidebar-card:hover {
+    transform: translateY(-5px); /* Dá uma subidinha ao passar o mouse */
+}
+
+.sidebar-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.sidebar-card h4 {
+    font-size: 16px;
+    font-weight: 800;
+    color: #041221;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.sidebar-card p {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* --- Ajuste Responsivo para Celular --- */
+@media (max-width: 992px) {
+    .post-layout-container {
+        grid-template-columns: 1fr; /* Quebra as duas colunas e joga a barra lateral pra baixo no celular */
+        gap: 60px;
+    }
+    
+    .post-coluna-principal {
+        padding-right: 0;
+        border-right: none;
+    }
+    
+    .post-sidebar {
+        padding-left: 0;
+        border-top: 1px solid #e0e0e0; /* Cria uma linha divisória em cima para separar no celular */
+        padding-top: 40px;
+    }
+}
+
+/* Estilo para as listas dentro do post */
+.post-lista {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+.post-lista li {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 10px;
+}
