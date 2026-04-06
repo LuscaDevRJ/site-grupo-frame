@@ -156,6 +156,8 @@
     font-weight: bold;
     border-radius: 5px;
     transition: background-color 0.3s;
+    position: relative;
+    margin-bottom: 50px; /* Cria um "escudo" invisível embaixo do botão empurrando os pontinhos */
 }
 
 .btn-green:hover {
@@ -1948,4 +1950,62 @@
     line-height: 1.6;
     color: #444;
     margin-bottom: 10px;
+}
+
+
+/* ==========================================
+   CSS PARA CELULAR (RESPONSIVIDADE)
+   ========================================== */
+@media (max-width: 768px) {
+    
+    /* 1. Arruma o Menu que deve estar vazando a tela */
+    .navbar {
+        flex-direction: column; /* Coloca a logo em cima e os links embaixo */
+        padding: 15px;
+        gap: 20px;
+    }
+
+    .logo img {
+        height: 60px; /* Diminui a logo */
+    }
+
+    .nav-links {
+        flex-wrap: wrap; /* Permite que os links quebrem a linha se não couberem */
+        justify-content: center;
+        gap: 15px;
+        padding: 0;
+    }
+
+    .nav-links a {
+        font-size: 14px; /* Diminui a fonte do menu */
+    }
+
+    /* 2. Salva o Banner Principal (Hero) */
+    .hero {
+        height: auto;
+        min-height: 80vh;
+    }
+
+    .hero-content {
+        /* AQUI ESTÁ A SALVAÇÃO DO CELULAR */
+        padding-top: 80px !important; /* Sobrescreve os 600px problemáticos */
+        padding-bottom: 60px;
+    }
+
+    .hero-icon {
+        height: 50px; /* Ícone menor */
+    }
+
+    .hero-content h1 {
+        font-size: 28px !important; /* Título que cabe na tela */
+    }
+
+    .hero-content p {
+        font-size: 16px !important; /* Subtítulo amigável para leitura */
+    }
+
+    .btn-green {
+        padding: 12px 30px;
+        font-size: 16px;
+    }
 }
