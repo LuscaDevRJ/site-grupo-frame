@@ -1954,63 +1954,48 @@
 
 
 /* ==========================================
-   CSS PARA CELULAR (RESPONSIVIDADE)
+   CSS PARA CELULAR (RESPONSIVIDADE GERAL)
    ========================================== */
 @media (max-width: 768px) {
     
-    /* 1. Arruma o Menu que deve estar vazando a tela */
-    .navbar {
-        flex-direction: column; /* Coloca a logo em cima e os links embaixo */
-        padding: 15px;
-        gap: 20px;
-    }
+    /* --- GERAL --- */
+    body, html { overflow-x: hidden; width: 100%; }
 
-    .logo img {
-        height: 60px; /* Diminui a logo */
-    }
+    /* --- MENU E LOGO --- */
+    .navbar { flex-direction: column; padding: 15px; gap: 20px; }
+    .logo img { height: 60px; }
+    .nav-links { flex-wrap: wrap; justify-content: center; padding: 0; }
+    
+    /* --- HERO (Página Inicial) --- */
+    .hero { height: auto; min-height: 80vh; display: flex; align-items: center; justify-content: center; }
+    .hero-content { padding-top: 0 !important; padding-bottom: 0 !important; transform: translateY(0); margin-top: 80px; }
+    .hero-content h1 { font-size: 32px !important; }
+    .hero-content p { font-size: 18px !important; }
+    .btn-green { margin-top: 20px; }
 
-    .nav-links {
-        flex-wrap: wrap; /* Permite que os links quebrem a linha se não couberem */
-        justify-content: center;
-        gap: 15px;
-        padding: 0;
-    }
+    /* --- DIFERENCIAIS (De 4 colunas para 1 coluna) --- */
+    .diferenciais-grid { grid-template-columns: 1fr; gap: 40px; }
+    .btn-large { padding: 15px 40px; width: 100%; } /* Botão ocupa a tela toda */
 
-    .nav-links a {
-        font-size: 14px; /* Diminui a fonte do menu */
-    }
+    /* --- PORTFÓLIO E FOTOS --- */
+    .portfolio-intro-grid { grid-template-columns: 1fr; text-align: center; }
+    .portfolio-grid { grid-template-columns: 1fr 1fr; } /* 2 fotos por linha no celular */
+    .portfolio-carousel-wrapper { width: 100%; }
+    .foto-port { width: 250px; height: 250px; } /* Fotos menores na esteira */
 
-    /* 2. Salva o Banner Principal (Hero) */
-    .hero {
-        height: 100vh; /* Faz o banner ocupar a tela inteira do celular bonitinho */
-        min-height: 500px; /* Garante que não vai amassar em celulares muito pequenos */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
+    /* --- PÁGINA: A FRAME --- */
+    .banner-content h1 { font-size: 40px; } /* Título A FRAME não vaza da tela */
+    .mvv-row { flex-direction: column; text-align: center; gap: 20px; } /* Ícone em cima, texto embaixo */
+    .visao-row .mvv-text { text-align: center; } /* Tira o alinhamento pra direita */
 
-    .hero-content {
-        /* AQUI ESTÁ A SALVAÇÃO DO CELULAR */
-        padding-top: 0 !important; /* Sobrescreve os 600px problemáticos */
-        padding-bottom: 0;
-        transform: translate(0);
-    }
+    /* --- CONTATO E MAPA (De 2 colunas para 1) --- */
+    .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    .contact-map { min-height: 350px; } /* Mapa menor no celular */
+    .form-row { flex-direction: column; } /* Campos lado a lado ficam empilhados */
 
-    .hero-icon {
-        height: 50px; /* Ícone menor */
-    }
-
-    .hero-content h1 {
-        font-size: 28px !important; /* Título que cabe na tela */
-    }
-
-    .hero-content p {
-        font-size: 16px !important; /* Subtítulo amigável para leitura */
-    }
-
-    .btn-green {
-        padding: 12px 30px;
-        font-size: 16px;
-        margin-top: 20px;
-    }
+    /* --- RODAPÉ (FOOTER) --- */
+    .footer-content { flex-direction: column; gap: 40px; text-align: center; }
+    .footer-col { padding: 0 !important; border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 20px !important; }
+    .footer-col:last-child { border-bottom: none; }
+    .social-icons { justify-content: center; }
 }
