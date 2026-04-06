@@ -98,8 +98,9 @@
     position: relative;
     z-index: 10;
     color: #ffffff;
-    margin-top: 0;
+    margin: 0 auto;
     padding: 0 20px;
+    transform: translate(80px);
 }
 
 .carousel-dots {
@@ -156,7 +157,7 @@
     font-weight: bold;
     border-radius: 5px;
     transition: background-color 0.3s;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 .btn-green:hover {
@@ -1983,12 +1984,16 @@
     .hero {
         height: 100vh; /* Faz o banner ocupar a tela inteira do celular bonitinho */
         min-height: 500px; /* Garante que não vai amassar em celulares muito pequenos */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .hero-content {
         /* AQUI ESTÁ A SALVAÇÃO DO CELULAR */
         padding-top: 0 !important; /* Sobrescreve os 600px problemáticos */
         padding-bottom: 0;
+        transform: translate(0);
     }
 
     .hero-icon {
@@ -2006,5 +2011,6 @@
     .btn-green {
         padding: 12px 30px;
         font-size: 16px;
+        margin-top: 20px;
     }
 }
