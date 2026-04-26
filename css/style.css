@@ -1998,4 +1998,16 @@
     .footer-col { padding: 0 !important; border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 20px !important; }
     .footer-col:last-child { border-bottom: none; }
     .social-icons { justify-content: center; }
+
+    /* --- BLOG (Correção dos Textos nas Imagens) --- */
+    .blog-grid { grid-template-columns: 1fr; } /* Empilha todos os cards do blog */
+    
+    .blog-card-featured { height: auto; min-height: 380px; grid-column: span 1; } /* Card principal adapta a altura */
+    .blog-card-featured .blog-card-content { padding: 30px 15px; }
+    .blog-card-featured h3 { font-size: 22px; margin-bottom: 15px; } /* Título menor para caber na tela */
+    .blog-card-featured p { font-size: 14px; margin-bottom: 20px; } /* Texto menor para leitura confortável */
+    .blog-card-featured .btn-green { padding: 12px 25px; font-size: 14px; }
+    
+    .blog-img-wrapper { height: 200px; } /* Ajusta a foto dos 3 cards menores */
+    .blog-img-wrapper h3 { font-size: 16px; bottom: 10px; left: 10px; right: 10px; }
 }
