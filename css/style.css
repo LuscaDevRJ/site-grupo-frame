@@ -126,7 +126,7 @@
 }
 
 .dot.active, .dot:hover {
-    background-color: #00c853; /* Verde Frame */
+    background-color: #54a17f; /* Verde Frame */
 }
 
 .hero-icon {
@@ -151,7 +151,7 @@
 
 .btn-green {
     display: inline-block;
-    background-color: #008136;
+    background-color: #54a17f;
     color: #ffffff;
     padding: 15px 40px;
     text-decoration: none;
@@ -164,7 +164,7 @@
 }
 
 .btn-green:hover {
-    background-color: #009624;
+    background-color: #54a17f;
 }
 
 /* --- Botões Flutuantes --- */
@@ -770,7 +770,7 @@
 .mvv-divider {
     border: none;
     height: 1px;
-    background-color: #00c853; /* O verde da Frame */
+    background-color: #54a17f; /* O verde da Frame */
     width: 100%;
     margin: 0;
 }
@@ -1562,7 +1562,7 @@
 }
 
 .search-box button:hover {
-    background-color: #009624;
+    background-color: #54a17f;
 }
 
 
@@ -1691,7 +1691,7 @@
     transition: 0.3s;
 }
 
-.blog-btn-seta:hover { background-color: #00c853; }
+.blog-btn-seta:hover { background-color: #54a17f; }
 .blog-btn-seta.esquerda { left: -15px; }
 .blog-btn-seta.direita { right: -15px; }
 
@@ -1746,11 +1746,11 @@
 }
 
 .newsletter-form input:focus {
-    border-color: #00c853; /* Borda fica verde ao clicar e digitar */
+    border-color: #54a17f; /* Borda fica verde ao clicar e digitar */
 }
 
 .newsletter-form button {
-    background-color: #00c853; /* Verde Frame */
+    background-color: #54a17f; /* Verde Frame */
     color: white;
     border: none;
     padding: 15px 40px;
@@ -1763,7 +1763,7 @@
 }
 
 .newsletter-form button:hover {
-    background-color: #009624; /* Verde mais escuro no hover */
+    background-color: #54a17f; /* Verde mais escuro no hover */
 }
 
 /* --- Ajuste Responsivo para Celulares --- */
@@ -1850,7 +1850,7 @@
 .btn-share:hover { opacity: 0.8; }
 .btn-share.fb { background-color: #3b5998; }
 .btn-share.tw { background-color: #1da1f2; }
-.btn-share.wp { background-color: #25d366; }
+.btn-share.wp { background-color: #54a17f; }
 .btn-share.in { background-color: #0077b5; }
 
 /* Imagem Destaque Abaixo dos Botões */
