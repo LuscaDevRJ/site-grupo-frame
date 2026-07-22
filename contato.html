@@ -6,6 +6,22 @@
     <title>Contato - Grupo Frame</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/x-icon" href="img/cropped-grupo-frame-favicon-32x32.ico">
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '2280290602790019');
+        fbq('track', 'PageView');
+        </script>
+        <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=2280290602790019&ev=PageView&noscript=1"/>
+    </noscript>
+            <!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -15,29 +31,50 @@
         </div>
         <nav>
             <ul class="nav-links">
-                <li><a href="index">INÍCIO</a></li>
-                <li><a href="a-frame">A FRAME</a></li>
-                <li><a href="diferencial">DIFERENCIAL</a></li>
-                <li><a href="portfolio">PORTFÓLIO</a></li>
-                <li><a href="contato" class="active">CONTATO</a></li>
+                <li><a href="index.html">INÍCIO</a></li>
+                <li><a href="a-frame.html">A FRAME</a></li>
+                <li><a href="diferencial.html">DIFERENCIAL</a></li>
+                <li><a href="portfolio.html">PORTFÓLIO</a></li>
+                <li><a href="contato.html" class="active">CONTATO</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="contact-page-section">
         <div class="container">
-            
-            <div style="text-align: center; margin-bottom: 50px;">
-                <h2 style="font-size: 36px; font-weight: 900; color: #041221; margin-bottom: 15px;">Nossa Localização</h2>
-                <p style="font-size: 18px; color: #444;">Venha nos fazer uma visita ou clique no botão flutuante para falar pelo WhatsApp!</p>
-            </div>
-
-            <div class="contact-map" style="max-width: 1000px; margin: 0 auto; height: 500px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden;">
+            <div class="contact-grid">
                 
-                <iframe src="https://www.google.com/maps?q=R.+Arcádia,+56+-+Tomás+Coelho,+Rio+de+Janeiro+-+RJ&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="contact-map">
+                    <iframe src="https://maps.google.com/maps?q=R.%20Arc%C3%A1dia,%2056%20-%20Tom%C3%A1s%20Coelho,%20Rio%20de%20Janeiro&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
                 
-            </div>
+                <div class="contact-form-box">
+                    <h2>Entre em contato e faça a diferença em seu negócio.</h2>
+                    
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <input type="text" placeholder="Nome" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <input type="tel" placeholder="Telefone" required>
+                            <input type="email" placeholder="E-mail" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea placeholder="Mensagem" rows="5" required></textarea>
+                        </div>
+                        
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="aceito" required>
+                            <label for="aceito">Aceito receber comunicações da Frame e estar em sua base de dados.</label>
+                        </div>
+                        
+                        <button type="submit" class="btn-green btn-enviar">Enviar</button>
+                    </form>
+                </div>
 
+            </div>
         </div>
     </section>
 
@@ -52,11 +89,11 @@
             <div class="footer-col">
                 <h4>Páginas</h4>
                 <ul>
-                    <li><a href="index">Início</a></li>
-                    <li><a href="a-frame">A Frame</a></li>
-                    <li><a href="diferencial">Diferencial</a></li>
-                    <li><a href="portfolio">Portfólio</a></li>
-                    <li><a href="contato">Contato</a></li>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="a-frame.html">A Frame</a></li>
+                    <li><a href="diferencial.html">Diferencial</a></li>
+                    <li><a href="portfolio.html">Portfólio</a></li>
+                    <li><a href="contato.html">Contato</a></li>
                 </ul>
             </div>
             <div class="footer-col">
